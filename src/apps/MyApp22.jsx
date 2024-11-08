@@ -3,7 +3,9 @@ import React from "react";
 function MyApp22(props) {
   return (
     <div>
-      <Comp score={99} name={"faker"} />
+      <Comp score={99} name={"faker"}>
+        some content
+      </Comp>
       <hr />
       {/* content는 children prop으로 전달 */}
       <Comp>some content</Comp>
