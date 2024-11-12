@@ -24,7 +24,7 @@ function MyApp63(props) {
         onClick={() => {
           axios.put("/api/main3/sub7", {
             gameTitle: " 스토커 2: 초르노빌의 심장부",
-            production: " GSC Game World",
+            production: " GSC Game World ",
           });
         }}
       >
