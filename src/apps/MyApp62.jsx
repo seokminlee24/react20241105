@@ -7,6 +7,23 @@ function MyApp62(props) {
     <div>
       <Button
         onClick={() => {
+          axios.post("/api/main2/sub3", {
+            name: "son",
+            age: 99,
+            married: true,
+            item: ["coffee", "milk", "cola"],
+            team: {
+              name: "토트넘",
+              location: "런던",
+            },
+          });
+        }}
+      >
+        btn3
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
           axios.post("/api/main2/sub2", {
             title: "채식주의자",
             author: "한강",
