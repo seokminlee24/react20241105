@@ -7,6 +7,21 @@ function MyApp64(props) {
     <div>
       <Button
         onClick={() => {
+          axios.get("/api/main4/sub3/부천");
+        }}
+      >
+        경로 데이터 address
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main4/sub3/서울");
+        }}
+      >
+        경로 데이터 address
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
           axios.get("/api/main4/sub2/777");
         }}
       >
