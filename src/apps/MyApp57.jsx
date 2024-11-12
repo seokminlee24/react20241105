@@ -17,7 +17,7 @@ function MyApp57(props) {
           axios.post("/hello");
         }}
       >
-        get 요청
+        post 요청
       </Button>
       <hr />
       {/*javascript 사용*/}
