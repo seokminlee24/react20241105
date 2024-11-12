@@ -12,13 +12,34 @@ function MyApp66(props) {
   const [customerId, setCustomerId] = useState(0);
   const [customer, setCustomer] = useState(null);
 
+  const [supplierId, setSupplierId] = useState(0);
+  const [supplier, setSupplier] = useState(null);
+
   const handleButtonClick = () => {
     axios
       .get(`/api/main6/sub1/${customerId}`)
       .then((res) => setCustomer(res.data));
   };
+
+  const handleButtonClick2 = () => {
+    axios
+      .get(`/api/main6/sub2/${supplierId}`)
+      .then((res) => setSupplier(res.data));
+  };
   return (
     <div>
+      <Field label={"공급자 번호"}>
+        <NumberInputRoot
+          value={supplierId}
+          onValueChange={(e) => setSupplierId(e.value)}
+        >
+          <NumberInputField />
+        </NumberInputRoot>
+      </Field>
+      <Button onClick={handleButtonClick2}>조회</Button>
+      <hr />
+      <SupplierView supplier={supplier} />
+      <hr />
       <Field label={"고객번호"}>
         <NumberInputRoot
           value={customerId}
@@ -33,6 +54,45 @@ function MyApp66(props) {
     </div>
   );
 }
+function SupplierView({ supplier }) {
+  if (!supplier) {
+    return (
+      <Box>
+        <p>조회된 공급자가 없습니다.</p>
+      </Box>
+    );
+  }
+
+  return (
+    <Box>
+      <Field label={"ID"} readOnly>
+        <Input value={supplier.id} />
+      </Field>
+      <Field label={"공급자명"} readOnly>
+        <Input value={supplier.name} />
+      </Field>
+      <Field label={"계약명"} readOnly>
+        <Input value={supplier.contact} />
+      </Field>
+      <Field label={"주소"} readOnly>
+        <Input value={supplier.address} />
+      </Field>
+      <Field label={"도시"} readOnly>
+        <Input value={supplier.city} />
+      </Field>
+      <Field label={"우편번호"} readOnly>
+        <Input value={supplier.postalCode} />
+      </Field>
+      <Field label={"국가"} readOnly>
+        <Input value={supplier.country} />
+      </Field>
+      <Field label={"전화번호"} readOnly>
+        <Input value={supplier.phone} />
+      </Field>
+    </Box>
+  );
+}
+
 function CustomerView({ customer }) {
   if (!customer) {
     return (
