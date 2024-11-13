@@ -11,6 +11,7 @@ function MyApp70(props) {
       files: files,
     });
   };
+
   return (
     <div>
       <input
