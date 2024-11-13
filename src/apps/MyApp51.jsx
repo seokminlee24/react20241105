@@ -3,7 +3,7 @@ import { Field } from "../components/ui/field.jsx";
 import { Box, Input } from "@chakra-ui/react";
 
 // 하나의 Context로 메시지와 업데이트 함수를 관리
-const MessageContext = createContext();
+const MessageContext = createContext("");
 
 function MyBox2() {
   const { message } = useContext(MessageContext); // 메시지 값 가져오기
