@@ -7,6 +7,45 @@ function MyApp68(props) {
     <div>
       <Button
         onClick={() => {
+          axios
+            .get("/api/main7/sub12")
+            .then((res) => res.data)
+            .then((data) => console.log(data))
+            .catch((error) => {
+              console.log("200번대 아님");
+              console.log(error);
+              console.log(error.response.status); // 상태코드
+              console.log(error.response.data); // 응답본분
+              console.log(error.response.data.name); // 응답본분
+              console.log(error.response.data.age); // 응답본분
+            });
+        }}
+      >
+        405 응답
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main7/sub11");
+        }}
+      >
+        sub11경로 : 403
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main7/sub10");
+        }}
+      >
+        sub10경로 : 202
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main7/sub9");
+        }}
+      >
+        sub9경로 : 405
+      </Button>
+      <Button
+        onClick={() => {
           axios.get("/api/main7/sub8");
         }}
       >
